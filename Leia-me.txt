@@ -1,0 +1,1 @@
+Colocar as configurações de conexao de banco no arquivo INI Obrigado

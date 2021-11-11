@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/08/25 22:06:09.000.806,=C:\Users\rafae\Documents\Embarcadero\Studio\Projects\Unit10.pas</Transaction>
+    <Transaction>2021/08/25 22:06:51.000.373,D:\Projeto Pedido de Venda\Units\UntTelaPrincipal.dfm=C:\Users\rafae\Documents\Embarcadero\Studio\Projects\Unit10.dfm</Transaction>
+    <Transaction>2021/08/25 22:06:51.000.373,D:\Projeto Pedido de Venda\Units\UntTelaPrincipal.pas=C:\Users\rafae\Documents\Embarcadero\Studio\Projects\Unit10.pas</Transaction>
+    <Transaction>2021/08/25 22:07:03.000.436,D:\Projeto Pedido de Venda\Pedido_Vendas.dproj=C:\Users\rafae\Documents\Embarcadero\Studio\Projects\Project10.dproj</Transaction>
+    <Transaction>2021/08/25 22:58:09.000.407,=D:\Projeto Pedido de Venda\Unit1.pas</Transaction>
+    <Transaction>2021/08/25 22:58:21.000.987,D:\Projeto Pedido de Venda\Unit1.pas=D:\Projeto Pedido de Venda\Classes\classeConexao.pas</Transaction>
+    <Transaction>2021/08/25 23:32:22.000.397,=D:\Projeto Pedido de Venda\Unit1.pas</Transaction>
+    <Transaction>2021/08/25 23:46:43.000.596,D:\Projeto Pedido de Venda\Classes\classeConexao.pas=</Transaction>
+    <Transaction>2021/08/25 23:47:02.000.047,=D:\Projeto Pedido de Venda\Unit1.pas</Transaction>
+    <Transaction>2021/08/25 23:47:14.000.189,D:\Projeto Pedido de Venda\Unit1.pas=D:\Projeto Pedido de Venda\Classes\classeCliente.pas</Transaction>
+    <Transaction>2021/08/26 01:00:11.000.417,=D:\Projeto Pedido de Venda\Unit1.pas</Transaction>
+    <Transaction>2021/08/26 01:00:28.000.318,D:\Projeto Pedido de Venda\Unit1.pas=D:\Projeto Pedido de Venda\Classes\classeProduto.pas</Transaction>
+    <Transaction>2021/08/26 02:27:49.000.627,=D:\Projeto Pedido de Venda\Unit1.pas</Transaction>
+    <Transaction>2021/08/26 02:27:57.000.548,D:\Projeto Pedido de Venda\Unit1.pas=D:\Projeto Pedido de Venda\Classes\classePedido.pas</Transaction>
+  </Transactions>
+</BorlandProject>

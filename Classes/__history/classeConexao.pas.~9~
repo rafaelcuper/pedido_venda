@@ -1,0 +1,82 @@
+unit classeConexao;
+
+interface
+
+uses
+   IniFiles, SysUtils, Forms, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error,
+   FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool,
+   FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL, FireDAC.Phys.MySQLDef,
+   FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client, Dialogs;
+
+type
+  TConexao = class
+    private
+       private
+        Path: string;
+        Secao: string;
+        Host: string;
+        Database: string;
+        Password: string;
+        User: string;
+
+    public
+      constructor Create(Path: string; Secao: string);
+      procedure LerArqini(); virtual;
+      procedure Conectar(var Conexao: TFDConnection); virtual;
+      property Servidor: string read Host;
+      property Usuario: string read User;
+      property Senha: string read Password;
+      property Banco: string read Database;
+  end;
+
+implementation
+
+constructor TConexao.Create(Path: string; Secao: string);
+begin
+
+ if FileExists(Path) then
+ begin
+   Self.Path := Path;
+   Self.Secao := Secao;
+ end
+ else
+   raise Exception.Create('Arquivo INI para configuração não encontrado.'#13#10'Aplicação será finalizada.');
+
+ end;
+
+procedure TConexao.Conectar(var Conexao: TFDConnection);
+ begin
+
+    LerArqini();
+
+    try
+     Conexao.Connected := false;
+     Conexao.LoginPrompt := false;
+     Conexao.DriverName:= 'Mysql';
+     Conexao.Params.Clear;
+     Conexao.Params.Add('server='+ Host);
+     Conexao.Params.Add('user_name='+ User);
+     Conexao.Params.Add('password='+ Password);
+     Conexao.Params.Add('database='+ Database);
+    Except
+     on E:Exception do
+      ShowMessage('Erro ao carregar parâmetros de conexão!'#13#10 + E.Message);
+    end;
+ end;
+
+ procedure TConexao.LerArqini();
+ var
+   ArqIni : TIniFile;
+ begin
+    ArqIni := TIniFile.Create(Path);
+    try
+     Host    := ArqIni.ReadString(Secao, 'Hostname', '');
+     Database  := ArqIni.ReadString(Secao, 'Database', '');
+     Password  := ArqIni.ReadString(Secao, 'Password', '');
+     User    := ArqIni.ReadString(Secao, 'user_name', '');
+    finally
+      ArqIni.Free;
+    end;
+ end;
+
+end.
